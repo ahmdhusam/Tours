@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getTours } from "../../utils/getTours";
 
 export default async function handler(req, res) {
     if (req.method !== "GET") {
@@ -7,9 +8,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const toursRes = await axios.get(
-            "https://course-api.com/react-tours-project"
-        );
+        const toursRes = await getTours();
 
         const data = toursRes.data;
 

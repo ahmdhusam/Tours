@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { getTours } from "../utils/getTours";
+
 import MainHome from "../Components/Home";
 
 export default function Home(props) {
@@ -7,10 +9,11 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-    const res = await axios.get("https://course-api.com/react-tours-project");
+    const res = await getTours();
     const data = res.data;
 
     return {
         props: { tours: data || [] },
+        revalidate: 3600,
     };
 }
