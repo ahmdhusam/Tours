@@ -1,0 +1,58 @@
+@import "../Helpers/variables";
+@import "../Helpers/mixin";
+
+.tour {
+    margin-block-end: 4rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0 #626262;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__content {
+        padding: 2rem;
+
+        > header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &_title {
+            font-weight: 500;
+        }
+
+        &_price {
+            padding: 0.4rem;
+            color: $mainColor;
+            background-color: $scndColor;
+            border-radius: 0.4rem;
+        }
+
+        &_description {
+            color: $paragraphColor;
+            font: {
+                size: 0.9rem;
+                weight: 400;
+            }
+            line-height: 1.7rem;
+
+            &_btn {
+                border: none;
+                background-color: transparent;
+                color: $mainColor;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+
+        &_btn {
+            @extend %btn;
+            color: $redColor;
+            border: 1px solid $redColor;
+        }
+    }
+}

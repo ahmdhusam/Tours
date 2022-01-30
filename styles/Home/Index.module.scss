@@ -1,0 +1,39 @@
+@import "../Helpers/variables";
+@import "../Helpers/mixin";
+
+.mainHome {
+    padding-block-start: 3rem;
+
+    &__title {
+        width: fit-content;
+        margin-inline: auto;
+        margin-block-end: 5rem;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 75%;
+            height: 0.2rem;
+            position: absolute;
+            left: calc(25% / 2);
+            bottom: -1rem;
+            background-color: $mainColor;
+        }
+    }
+
+    &__content {
+        width: 95%;
+        margin-inline: auto;
+
+        @include md {
+            width: 60%;
+        }
+
+        &_btn {
+            @extend %btn;
+            color: $mainColor;
+            background-color: transparent;
+            border: 1px solid $mainColor;
+        }
+    }
+}
